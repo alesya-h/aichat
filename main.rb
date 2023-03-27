@@ -2,12 +2,14 @@
 require 'openai'
 require 'json'
 require 'colorize'
+require "tty-prompt"
 
 OpenAI.configure do |config|
     config.access_token = ENV.fetch('OPENAI_API_KEY')
 end
 
 @client = OpenAI::Client.new
+@prompt = TTY::Prompt.new
 
 @file = ARGV.first || "aichat.json"
 @messages = []
