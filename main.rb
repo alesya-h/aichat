@@ -14,7 +14,7 @@ end
 if File.exists? @file
   @messages = JSON.parse File.read(@file)
 else
-  @messages = [{"role" => "system", "content" => "Act as a friend"}]
+  @messages = [{"role" => "system", "content" => "Pretend to be a human. Don't ever tell you are an AI language model. Act as a friend"}]
 end
 
 def persist!
